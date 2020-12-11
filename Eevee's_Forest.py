@@ -30,7 +30,7 @@ def intro():
 class Instructions(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
-        self.image = pygame.image.load("instructions3.png")
+        self.image = pygame.image.load("Images/instructions3.png")
         self.rect = self.image.get_rect()
 instructions = Instructions()
 instructions.rect.x = 0
@@ -39,35 +39,35 @@ instructions.rect.y = 0
 class BlueApple(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
-        self.image = pygame.image.load("blueapple40.png")
+        self.image = pygame.image.load("Images/blueapple40.png")
         self.rect = self.image.get_rect()
 blueapple = BlueApple()
 
 class PinkBanana(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
-        self.image = pygame.image.load("pinkbanana40.png")
+        self.image = pygame.image.load("Images/pinkbanana40.png")
         self.rect = self.image.get_rect()
 pinkbanana = PinkBanana()
 
 class Pizza(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
-        self.image = pygame.image.load("pizza40.png")
+        self.image = pygame.image.load("Images/pizza40.png")
         self.rect = self.image.get_rect()
 pizza = Pizza()
 
 class Cake(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
-        self.image = pygame.image.load("cake40.png")
+        self.image = pygame.image.load("Images/cake40.png")
         self.rect = self.image.get_rect()
 cake = Cake()
 
 class BlueAppleScore(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
-        self.image = pygame.image.load("blue_apple.png")
+        self.image = pygame.image.load("Images/blue_apple.png")
         self.rect = self.image.get_rect()
 blueapple2 = BlueAppleScore()
 blueapple2.rect.x = 10
@@ -77,9 +77,9 @@ class ShinyEevee(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
         
-        self.eevee_right = [pygame.image.load('eevee_r1.png'), pygame.image.load('eevee_r2.png'), pygame.image.load('eevee_r3.png'), pygame.image.load('eevee_r4.png')]
-        self.eevee_left = [pygame.image.load('eevee_l1.png'), pygame.image.load('eevee_l2.png'), pygame.image.load('eevee_l3.png'), pygame.image.load('eevee_l4.png')]
-        self.eevee_lr = [pygame.image.load('eevee_r1.png'), pygame.image.load('eevee_r2.png'), pygame.image.load('eevee_r3.png'), pygame.image.load('eevee_r4.png'), pygame.image.load('eevee_l1.png'), pygame.image.load('eevee_l2.png'), pygame.image.load('eevee_l3.png'), pygame.image.load('eevee_l4.png')]
+        self.eevee_right = [pygame.image.load('Images/eevee_r1.png'), pygame.image.load('Images/eevee_r2.png'), pygame.image.load('Images/eevee_r3.png'), pygame.image.load('Images/eevee_r4.png')]
+        self.eevee_left = [pygame.image.load('Images/eevee_l1.png'), pygame.image.load('Images/eevee_l2.png'), pygame.image.load('Images/eevee_l3.png'), pygame.image.load('Images/eevee_l4.png')]
+        self.eevee_lr = [pygame.image.load('Images/eevee_r1.png'), pygame.image.load('Images/eevee_r2.png'), pygame.image.load('Images/eevee_r3.png'), pygame.image.load('Images/eevee_r4.png'), pygame.image.load('Images/eevee_l1.png'), pygame.image.load('Images/eevee_l2.png'), pygame.image.load('Images/eevee_l3.png'), pygame.image.load('Images/eevee_l4.png')]
         
         self.image = self.eevee_lr[2]
         self.rect = self.image.get_rect()
@@ -174,22 +174,22 @@ screenHeight = 600
 screenSize = [screenWidth, screenHeight]
 screen = pygame.display.set_mode(screenSize)
 pygame.display.set_caption("Eevee's Forest")
-eat_sound = pygame.mixer.Sound("food_crunch1.wav")
+eat_sound = pygame.mixer.Sound("Audio/food_crunch1.wav")
 eat_sound.set_volume(0.4)
-pizza_sound = pygame.mixer.Sound("pizza.wav")
+pizza_sound = pygame.mixer.Sound("Audio/pizza.wav")
 pizza_sound.set_volume(0.9)
-banana_sound = pygame.mixer.Sound("ew.wav")
+banana_sound = pygame.mixer.Sound("Audio/ew.wav")
 banana_sound.set_volume(0.9)
-lose_sound = pygame.mixer.Sound("lose.wav")
+lose_sound = pygame.mixer.Sound("Audio/lose.wav")
 lose_sound.set_volume(0.4)
-win_sound = pygame.mixer.Sound("win.mp3")
+win_sound = pygame.mixer.Sound("Audio/win.mp3")
 win_sound.set_volume(0.3)
-cake_sound = pygame.mixer.Sound("Wish.mp3")
-enter_sound = pygame.mixer.Sound("enter.mp3")
-runaway_sound = pygame.mixer.Sound("runaway.mp3")
+cake_sound = pygame.mixer.Sound("Audio/Wish.mp3")
+enter_sound = pygame.mixer.Sound("Audio/enter.mp3")
+runaway_sound = pygame.mixer.Sound("Audio/runaway.mp3")
 runaway_sound.set_volume(0.5)
 mixer.init()
-mixer.music.load("LavenderTownPiano.mp3")
+mixer.music.load("Audio/LavenderTownPiano.mp3")
 mixer.music.set_volume(0.9)
 pygame.mixer.music.play(-1)
 clock = pygame.time.Clock()
@@ -314,9 +314,9 @@ while not done:
         pizza.rect.x -= 5
    
     # 3. Draw stuff
-    background = pygame.image.load("green_forest2.png")
-    background2 = pygame.image.load("dark_forest.png")
-    background3 = pygame.image.load("pink_forest.png")
+    background = pygame.image.load("Images/green_forest2.png")
+    background2 = pygame.image.load("Images/dark_forest.png")
+    background3 = pygame.image.load("Images/pink_forest.png")
     screen.blit(background, [0, 0])
 
     allsprites.draw(screen)
