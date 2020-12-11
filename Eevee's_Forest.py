@@ -141,7 +141,7 @@ def check_keys():
         shiny_eevee.rect.y += 30
     if keys[K_ESCAPE]:
         runaway_sound.play(1)
-        #(1800)
+        pygame.time.wait(1800)
         pygame.quit()
         quit()
 
