@@ -90,12 +90,16 @@ shiny_eevee.rect.y = 400
 
 x = shiny_eevee.rect.x
 y = shiny_eevee.rect.y
+
 def check_keys():
     global shiny_eevee
     self = shiny_eevee
     keys = pygame.key.get_pressed()
+
     if keys[K_RIGHT]and shiny_eevee.rect.x <600:
         shiny_eevee.rect.x += 30
+        keyright = True
+        keypress = True
         if self.image == self.eevee_lr[0]:
             self.image = self.eevee_lr[1]
         elif self.image == self.eevee_lr[1]:
@@ -115,6 +119,8 @@ def check_keys():
        
     if keys[K_LEFT] and shiny_eevee.rect.x > 5:
         shiny_eevee.rect.x -= 30
+        keyleft = True
+        keypress = True
         if self.image == self.eevee_lr[0]:
             self.image = self.eevee_lr[4]
         elif self.image == self.eevee_lr[1]:
@@ -131,6 +137,15 @@ def check_keys():
             self.image = self.eevee_lr[7]
         elif self.image == self.eevee_lr[7]:
             self.image = self.eevee_lr[4]
+    if keypress == False:
+        if keyleft == True:
+            self.image = self.eevee_left[2]
+            keyleft = False
+        if keyright == True:
+            self.image = self.eevee_right[2]
+            keyright = False
+
+
 
     
     if keys[K_SPACE] and shiny_eevee.rect.y >10:
