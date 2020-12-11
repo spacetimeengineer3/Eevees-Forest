@@ -173,7 +173,7 @@ cakes = pygame.sprite.Group()
 screenWidth = 800
 screenHeight = 600
 screenSize = [screenWidth, screenHeight]
-screen = pygame.display.set_mode(screenSize)
+screen = pygame.display.set_mode(screenSize, pygame.FULLSCREEN)
 pygame.display.set_caption("Eevee's Forest")
 eat_sound = pygame.mixer.Sound("Audio/food_crunch1.wav")
 eat_sound.set_volume(0.4)
