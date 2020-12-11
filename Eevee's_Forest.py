@@ -159,6 +159,7 @@ def check_keys():
         runaway_sound.play(1)
         pygame.time.wait(1800)
         pygame.quit()
+        quit()
 
 allsprites = pygame.sprite.Group()
 info = pygame.sprite.Group()
