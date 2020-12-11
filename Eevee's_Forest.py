@@ -97,55 +97,55 @@ def check_keys():
     if keys[K_RIGHT]and shiny_eevee.rect.x <600:
         shiny_eevee.rect.x += 30
         if self.image == self.eevee_lr[0]:
-            pygame.time.wait(50)
+            #(50)
             self.image = self.eevee_lr[1]
         elif self.image == self.eevee_lr[1]:
-            pygame.time.wait(50)
+            #(50)
             self.image = self.eevee_lr[2]
         elif self.image == self.eevee_lr[2]:
-            pygame.time.wait(50)
+            #(50)
             self.image = self.eevee_lr[3]
         elif self.image == self.eevee_lr[3]:
-            pygame.time.wait(50)
+            #(50)
             self.image = self.eevee_lr[0]
         elif self.image == self.eevee_lr[4]:
-            pygame.time.wait(50)
+            #(50)
             self.image = self.eevee_lr[0]
         elif self.image == self.eevee_lr[5]:
-            pygame.time.wait(50)
+            #(50)
             self.image = self.eevee_lr[1]
         elif self.image == self.eevee_lr[6]:
-            pygame.time.wait(50)
+            #(50)
             self.image = self.eevee_lr[2]
         elif self.image == self.eevee_lr[7]:
-            pygame.time.wait(50)
+            #(50)
             self.image = self.eevee_lr[3]
        
     if keys[K_LEFT] and shiny_eevee.rect.x > 5:
         shiny_eevee.rect.x -= 30
         if self.image == self.eevee_lr[0]:
-            pygame.time.wait(50)
+            #(50)
             self.image = self.eevee_lr[4]
         elif self.image == self.eevee_lr[1]:
-            pygame.time.wait(50)
+            #(50)
             self.image = self.eevee_lr[5]
         elif self.image == self.eevee_lr[2]:
-            pygame.time.wait(50)
+            #(50)
             self.image = self.eevee_lr[6]
         elif self.image == self.eevee_lr[3]:
-            pygame.time.wait(50)
+            #(50)
             self.image = self.eevee_lr[7]
         elif self.image == self.eevee_lr[4]:
-            pygame.time.wait(50)
+            #(50)
             self.image = self.eevee_lr[5]
         elif self.image == self.eevee_lr[5]:
-            pygame.time.wait(50)
+            #(50)
             self.image = self.eevee_lr[6]
         elif self.image == self.eevee_lr[6]:
-            pygame.time.wait(50)
+            #(50)
             self.image = self.eevee_lr[7]
         elif self.image == self.eevee_lr[7]:
-            pygame.time.wait(50)
+            #(50)
             self.image = self.eevee_lr[4]
 
     
@@ -157,7 +157,7 @@ def check_keys():
         shiny_eevee.rect.y += 30
     if keys[K_ESCAPE]:
         runaway_sound.play(1)
-        pygame.time.wait(1800)
+        #(1800)
         pygame.quit()
         quit()
 
@@ -343,7 +343,7 @@ while not done:
         pygame.mixer.music.stop
         
     info.draw(screen)
-    pygame.display.flip()
+    pygame.display.update()
     clock.tick(20)
     intro()
     
