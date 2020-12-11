@@ -97,55 +97,39 @@ def check_keys():
     if keys[K_RIGHT]and shiny_eevee.rect.x <600:
         shiny_eevee.rect.x += 30
         if self.image == self.eevee_lr[0]:
-            #(50)
             self.image = self.eevee_lr[1]
         elif self.image == self.eevee_lr[1]:
-            #(50)
             self.image = self.eevee_lr[2]
         elif self.image == self.eevee_lr[2]:
-            #(50)
             self.image = self.eevee_lr[3]
         elif self.image == self.eevee_lr[3]:
-            #(50)
             self.image = self.eevee_lr[0]
         elif self.image == self.eevee_lr[4]:
-            #(50)
             self.image = self.eevee_lr[0]
         elif self.image == self.eevee_lr[5]:
-            #(50)
             self.image = self.eevee_lr[1]
         elif self.image == self.eevee_lr[6]:
-            #(50)
             self.image = self.eevee_lr[2]
         elif self.image == self.eevee_lr[7]:
-            #(50)
             self.image = self.eevee_lr[3]
        
     if keys[K_LEFT] and shiny_eevee.rect.x > 5:
         shiny_eevee.rect.x -= 30
         if self.image == self.eevee_lr[0]:
-            #(50)
             self.image = self.eevee_lr[4]
         elif self.image == self.eevee_lr[1]:
-            #(50)
             self.image = self.eevee_lr[5]
         elif self.image == self.eevee_lr[2]:
-            #(50)
             self.image = self.eevee_lr[6]
         elif self.image == self.eevee_lr[3]:
-            #(50)
             self.image = self.eevee_lr[7]
         elif self.image == self.eevee_lr[4]:
-            #(50)
             self.image = self.eevee_lr[5]
         elif self.image == self.eevee_lr[5]:
-            #(50)
             self.image = self.eevee_lr[6]
         elif self.image == self.eevee_lr[6]:
-            #(50)
             self.image = self.eevee_lr[7]
         elif self.image == self.eevee_lr[7]:
-            #(50)
             self.image = self.eevee_lr[4]
 
     
