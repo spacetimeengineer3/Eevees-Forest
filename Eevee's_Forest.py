@@ -15,10 +15,11 @@ magenta = (255, 0, 255)
 lblue = (154, 167, 229)
 lteal = (70, 216, 200)
 
-screenWidth = int(800)
-screenHeight = int(600)
+#set screen width
+screenWidth = 800
+screenHeight = 600
 screenSize = [screenWidth, screenHeight]
-screen = pygame.display.set_mode(screenSize, pygame.FULLSCREEN)
+screen = pygame.display.set_mode(screenSize, pygame.FULLSCREEN, pygame.RESIZABLE)
 
 def intro():
     intro = True
