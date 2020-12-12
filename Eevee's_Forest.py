@@ -15,6 +15,11 @@ magenta = (255, 0, 255)
 lblue = (154, 167, 229)
 lteal = (70, 216, 200)
 
+screenWidth = int(800)
+screenHeight = int(600)
+screenSize = [screenWidth, screenHeight]
+screen = pygame.display.set_mode(screenSize, pygame.FULLSCREEN)
+
 def intro():
     intro = True
     info.draw(screen)
@@ -30,7 +35,7 @@ def intro():
 class Instructions(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
-        self.image = pygame.image.load("Images/instructions3.png")
+        self.image = pygame.image.load("Images/instructions3.png").convert_alpha()
         self.rect = self.image.get_rect()
 instructions = Instructions()
 instructions.rect.x = 0
@@ -39,35 +44,36 @@ instructions.rect.y = 0
 class BlueApple(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
-        self.image = pygame.image.load("Images/blueapple40.png")
+        self.image = pygame.image.load("Images/blueapple40.png").convert_alpha()
         self.rect = self.image.get_rect()
 blueapple = BlueApple()
 
 class PinkBanana(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
-        self.image = pygame.image.load("Images/pinkbanana40.png")
+        self.image = pygame.image.load("Images/pinkbanana40.png").convert_alpha()
         self.rect = self.image.get_rect()
 pinkbanana = PinkBanana()
 
 class Pizza(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
-        self.image = pygame.image.load("Images/pizza40.png")
+        self.image = pygame.image.load("Images/pizza40.png").convert_alpha()
         self.rect = self.image.get_rect()
 pizza = Pizza()
 
 class Cake(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
-        self.image = pygame.image.load("Images/cake40.png")
+        self.image = pygame.image.load("Images/cake40.png").convert_alpha()
         self.rect = self.image.get_rect()
 cake = Cake()
 
 class BlueAppleScore(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
-        self.image = pygame.image.load("Images/blue_apple.png")
+        self.image = pygame.image.load("Images/blue_apple.png").convert_alpha()
+
         self.rect = self.image.get_rect()
 blueapple2 = BlueAppleScore()
 blueapple2.rect.x = 10
@@ -77,9 +83,9 @@ class ShinyEevee(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
         
-        self.eevee_right = [pygame.image.load('Images/eevee_r1.png'), pygame.image.load('Images/eevee_r2.png'), pygame.image.load('Images/eevee_r3.png'), pygame.image.load('Images/eevee_r4.png')]
-        self.eevee_left = [pygame.image.load('Images/eevee_l1.png'), pygame.image.load('Images/eevee_l2.png'), pygame.image.load('Images/eevee_l3.png'), pygame.image.load('Images/eevee_l4.png')]
-        self.eevee_lr = [pygame.image.load('Images/eevee_r1.png'), pygame.image.load('Images/eevee_r2.png'), pygame.image.load('Images/eevee_r3.png'), pygame.image.load('Images/eevee_r4.png'), pygame.image.load('Images/eevee_l1.png'), pygame.image.load('Images/eevee_l2.png'), pygame.image.load('Images/eevee_l3.png'), pygame.image.load('Images/eevee_l4.png')]
+        self.eevee_right = [pygame.image.load('Images/eevee_r1.png').convert_alpha(), pygame.image.load('Images/eevee_r2.png').convert_alpha(), pygame.image.load('Images/eevee_r3.png').convert_alpha(), pygame.image.load('Images/eevee_r4.png').convert_alpha()]
+        self.eevee_left = [pygame.image.load('Images/eevee_l1.png').convert_alpha(), pygame.image.load('Images/eevee_l2.png').convert_alpha(), pygame.image.load('Images/eevee_l3.png').convert_alpha(), pygame.image.load('Images/eevee_l4.png').convert_alpha()]
+        self.eevee_lr = [pygame.image.load('Images/eevee_r1.png').convert_alpha(), pygame.image.load('Images/eevee_r2.png').convert_alpha(), pygame.image.load('Images/eevee_r3.png').convert_alpha(), pygame.image.load('Images/eevee_r4.png').convert_alpha(), pygame.image.load('Images/eevee_l1.png').convert_alpha(), pygame.image.load('Images/eevee_l2.png').convert_alpha(), pygame.image.load('Images/eevee_l3.png').convert_alpha(), pygame.image.load('Images/eevee_l4.png').convert_alpha()]
         
         self.image = self.eevee_lr[2]
         self.rect = self.image.get_rect()
@@ -137,13 +143,6 @@ def check_keys():
             self.image = self.eevee_lr[7]
         elif self.image == self.eevee_lr[7]:
             self.image = self.eevee_lr[4]
-    if keypress == False:
-        if keyleft == True:
-            self.image = self.eevee_left[2]
-            keyleft = False
-        if keyright == True:
-            self.image = self.eevee_right[2]
-            keyright = False
 
 
 
@@ -169,10 +168,6 @@ blueapples = pygame.sprite.Group()
 pinkbananas = pygame.sprite.Group()
 pizzas = pygame.sprite.Group()
 cakes = pygame.sprite.Group()
-screenWidth = 800
-screenHeight = 600
-screenSize = [screenWidth, screenHeight]
-screen = pygame.display.set_mode(screenSize, pygame.FULLSCREEN)
 pygame.display.set_caption("Eevee's Forest")
 eat_sound = pygame.mixer.Sound("Audio/food_crunch1.wav")
 eat_sound.set_volume(0.4)
@@ -314,9 +309,9 @@ while not done:
         pizza.rect.x -= 5
    
     # 3. Draw stuff
-    background = pygame.image.load("Images/green_forest2.png")
-    background2 = pygame.image.load("Images/dark_forest.png")
-    background3 = pygame.image.load("Images/pink_forest.png")
+    background = pygame.image.load("Images/green_forest2.png").convert_alpha()
+    background2 = pygame.image.load("Images/dark_forest.png").convert_alpha()
+    background3 = pygame.image.load("Images/pink_forest.png").convert_alpha()
     screen.blit(background, [0, 0])
 
     allsprites.draw(screen)
@@ -339,11 +334,11 @@ while not done:
         screen.blit(win, [240, 270])
         end = True
         win = True
-        pygame.mixer.music.stop
+        #pygame.mixer.music.stop
         
     info.draw(screen)
     pygame.display.update()
-    clock.tick(20)
+    clock.tick(60)
     intro()
     
 pygame.quit()
